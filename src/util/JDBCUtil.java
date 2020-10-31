@@ -43,8 +43,8 @@ public class JDBCUtil {
 		
 		try {
 			if(con != null) con.close();
-			if(rs != null) rs.close();
 			if(st != null) st.close();
+			if(rs != null) rs.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
