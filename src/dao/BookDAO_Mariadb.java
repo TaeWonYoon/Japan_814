@@ -48,6 +48,7 @@ public class BookDAO_Mariadb {
       int row = 0;
       
       try {
+    	  
     	  con = JDBCUtil.getConnection();
     	  ps = con.prepareStatement(sql);
     	  ps.setString(1, vo.getTitle());

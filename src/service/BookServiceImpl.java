@@ -2,44 +2,52 @@ package service;
 
 import java.util.List;
 
+import dao.BookDAO_Mariadb;
 import vo.BookVO;
 
 public class BookServiceImpl implements BookService {
 
+	private BookDAO_Mariadb dao = null;
+
+	public BookServiceImpl() { }
+	public BookServiceImpl(BookDAO_Mariadb dao) {
+		this.dao = dao;
+	}
+	public BookDAO_Mariadb getDao() {
+		return dao;
+	}
+	public void setDao(BookDAO_Mariadb dao) {
+		this.dao = dao;
+	}
+
 	@Override
 	public List<BookVO> bookList() {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.bookList();
 	}
 
 	@Override
 	public void bookAdd(BookVO vo) {
-		// TODO Auto-generated method stub
-
+		dao.bookAdd(vo);
 	}
 
 	@Override
 	public void bookDelete(int bookno) {
-		// TODO Auto-generated method stub
-
+		dao.bookDelete(bookno);
 	}
 
 	@Override
 	public void bookUpdate(BookVO vo) {
-		// TODO Auto-generated method stub
-
+		dao.bookUpdate(vo);
 	}
 
 	@Override
 	public BookVO getBook(int bookno) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.getBook(bookno);
 	}
 
 	@Override
 	public List<BookVO> searchBook(String condition, String keyword) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.bookSearch(condition, keyword);
 	}
 
 }
