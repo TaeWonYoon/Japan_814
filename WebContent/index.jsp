@@ -17,7 +17,7 @@
 <section>
 <h3> link list </h3>
 <ul>
-	<li><a href="${pageContext.request.contextPath}/Login.jsp"> Login </a>
+	<li><a href="${pageContext.request.contextPath}/login.jsp"> Login </a>
 	<li><a href="${pageContext.request.contextPath}/bookList.do"> Book List </a>
 	<li><a href="${pageContext.request.contextPath}/book.jsp"> Book 등록 </a>
 	<li><a href="${pageContext.request.contextPath}/"> 메뉴1 </a>

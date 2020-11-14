@@ -10,7 +10,7 @@
 <%@ include file="common/header.jsp" %>
 
 <h2> Login form </h2>
-<form action="Login.do" method="post">
+<form action="l	ogin.do" method="post">
 	<table>
 		<tr>
 			<td>ID</td>
