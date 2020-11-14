@@ -10,7 +10,7 @@
 <body>
 <h1> My WebApplication</h1>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<h1>ok</h1>
 <form action="delete.do" method="get" id="fm">
 	<table class="tableb">
 		<tr>
