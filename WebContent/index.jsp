@@ -1,20 +1,35 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Book App</title>
+<link rel="stylesheet"  href="./css/my.css" >
+<link rel="stylesheet"  href="./css/main.css" >
+
 </head>
 
 <body>
-<div id="a">
+<%@ include file="common/header.jsp" %>
 
-</div>
+<section>
+<h3> link list </h3>
+<ul>
+	<li><a href="${pageContext.request.contextPath}/Login.jsp"> Login </a>
+	<li><a href="${pageContext.request.contextPath}/bookList.do"> Book List </a>
+	<li><a href="${pageContext.request.contextPath}/book.jsp"> Book 등록 </a>
+	<li><a href="${pageContext.request.contextPath}/"> 메뉴1 </a>
+	<li><a href="${pageContext.request.contextPath}/"> 메뉴2 </a>
+</ul>
+</section>
+
+
+<%@ include file="common/footer.jsp" %>
+
 <script type="text/javascript">
-	var a = document.getElementById('a');
-	var b = "asd";
-	a.innerHTML = `b의 값은 ${b}`;
+
 </script>
 </body>
 </html>

@@ -5,9 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet"  href="./css/main.css" >
+<link rel="stylesheet"  href="./css/my.css" >
 </head>
 <body>
-
+<%@ include file="common/header.jsp" %>
 <h2>Book 등록</h2>
 
 <form action="./addServlet" method="post">
@@ -16,5 +18,7 @@
 	가격: <input type="number" id="" name="price"> <br>
 	<input type="submit" value="전송">
 </form>
+
+<%@ include file="common/footer.jsp" %>
 </body>
 </html>

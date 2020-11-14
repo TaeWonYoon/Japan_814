@@ -7,8 +7,10 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="./css/my.css">
+<link rel="stylesheet"  href="./css/main.css" >
 </head>
 <body>
+<%@ include file="common/header.jsp" %>
 <h1>Book List</h1>
 <hr>
 <form action="${pageContext.request.contextPath}/bookSearch.do" method="post">
@@ -37,7 +39,7 @@
 	<c:forEach var="data" items="${bookList}">
 		<tr>
 			<td>${ data.bookno }</td>
-			<td>${ data.title }</td>
+			<td><a href="viewBook.do?bookno=${ data.bookno }">${ data.title }</a></td>
 			<td>${ data.publisher }</td>
 			<td>${ data.price }</td>
 			<td><input type="checkbox" id="ck" name="bookno" value="${data.bookno}"></td>
@@ -46,6 +48,9 @@
 	</table>
 	
 </form>
+
+<%@ include file="common/footer.jsp" %>
+
 <script>
 	var ck = document.getElementById('ck');
 	console.log(ck.value);
