@@ -24,8 +24,8 @@
 	    <li> <a href="${pageContext.request.contextPath}/login.do"> LogOut </a></li>
 	    <li><a href="${pageContext.request.contextPath}/bookList.do"> Book List </a></li>
 		<li><a href="${pageContext.request.contextPath}/book.jsp"> Book 등록 </a></li>
-		<li><a href="${pageContext.request.contextPath}/"> 메뉴1 </a></li>
-		<li><a href="${pageContext.request.contextPath}/"> 메뉴2 </a></li>
+		<li><a href="${pageContext.request.contextPath}/upload1.jsp"> upload1 </a></li>
+		<li><a href="${pageContext.request.contextPath}/upload2.jsp"> upload2 </a></li>
 	</c:if>
 	
 </ul>

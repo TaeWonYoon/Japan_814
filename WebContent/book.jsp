@@ -14,8 +14,8 @@
 
 <form action="./add.do" method="post">
 	제목: <input type="text" id="" name="title"> <br>
-	출판사: <input type="text" id="" name="publisher"> <br>
-	가격: <input type="number" id="" name="price"> <br>
+	출판사: <input type="text" id="" name="publisher" value="태원"> <br>
+	가격: <input type="number" id="" name="price" value="1"> <br>
 	<input type="submit" value="전송">
 </form>
 
