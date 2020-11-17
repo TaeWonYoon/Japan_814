@@ -29,6 +29,7 @@ public class BookDAO_Mariadb {
             vo.setPrice(rs.getInt("price"));
             vo.setPublisher(rs.getString("publisher"));
             vo.setTitle(rs.getString("title"));
+            vo.setDay(rs.getNString("day"));
             list.add(vo);
          }
          

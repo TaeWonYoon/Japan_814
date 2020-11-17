@@ -5,14 +5,23 @@ public class BookVO {
 	private String title; // VARCHAR(40),
 	private String publisher; // VARCHAR(40),
 	private int price; // int(8)
-	
+	private String day;
 	public BookVO() {	}
 
-	public BookVO(int bookno, String title, String publisher, int price) {
+	public BookVO(int bookno, String title, String publisher, int price,String day) {
 		this.bookno = bookno;
 		this.title = title;
 		this.publisher = publisher;
 		this.price = price;
+		this.day = day;
+	}
+
+	public String getDay() {
+		return day;
+	}
+
+	public void setDay(String day) {
+		this.day = day;
 	}
 
 	public int getBookno() {
@@ -51,6 +60,7 @@ public class BookVO {
 	public String toString() {
 		return "BookVO [bookno=" + bookno + ", title=" + title + ", publisher=" + publisher + ", price=" + price + "]";
 	}
+
 
 	
 }

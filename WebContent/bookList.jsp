@@ -35,6 +35,7 @@
 		<th>Title</th>
 		<th>Publicher</th>
 		<th>Price</th>
+		<th>date</th>
 		<th><input type="button" id="delete" value="삭제" onclick="delt()"/></th>
 		</tr>
 	<c:forEach var="data" items="${bookList}">
@@ -43,6 +44,7 @@
 			<td><a href="viewBook.do?bookno=${ data.bookno }">${ data.title }</a></td>
 			<td>${ data.publisher }</td>
 			<td>${ data.price }</td>
+			<td>${ data.day }</td>
 			<td><input type="checkbox" id="ck" name="bookno" value="${data.bookno}"></td>
 		</tr> 
 	</c:forEach>

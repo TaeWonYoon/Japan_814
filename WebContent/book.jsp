@@ -12,7 +12,7 @@
 <%@ include file="common/header.jsp" %>
 <h2>Book 등록</h2>
 
-<form action="./addServlet" method="post">
+<form action="./add.do" method="post">
 	제목: <input type="text" id="" name="title"> <br>
 	출판사: <input type="text" id="" name="publisher"> <br>
 	가격: <input type="number" id="" name="price"> <br>
