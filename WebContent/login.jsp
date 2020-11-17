@@ -12,8 +12,11 @@
 <%@ include file="common/header.jsp" %>
 
 <h2> Login form </h2>
-<form action="l	ogin.do" method="post">
+<form action="login.do" method="post">
 	<table>
+		<tr>
+			<td colspan="2"><span style="color:red">${msg}</span></td>
+		</tr>
 		<tr>
 			<td>ID</td>
 			<td><input type="text" name="id" required="required" /></td>

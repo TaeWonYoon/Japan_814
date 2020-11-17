@@ -14,6 +14,7 @@
 <h1>Book List</h1>
 <hr>
 <form action="${pageContext.request.contextPath}/bookSearch.do" method="post">
+
 <table>
 	<tr>
 		<td>

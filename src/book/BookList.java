@@ -9,11 +9,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.BookDAO_Mariadb;
 import service.BookService;
 import service.BookServiceImpl;
 import vo.BookVO;
+import vo.UserVO;
 
 @WebServlet("/bookList.do")
 public class BookList extends HttpServlet {
@@ -22,9 +24,19 @@ public class BookList extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-			
 			request.setCharacterEncoding("utf-8");
 			response.setContentType("text/html;charset=utf-8");
+
+			HttpSession session = request.getSession();
+			UserVO login = (UserVO)session.getAttribute("login");
+			if(login == null) {
+				request.setAttribute("msg", "로그인이 필요합니다.");
+				getServletContext().
+				getRequestDispatcher("/login.jsp").
+				forward(request, response);
+				return;
+				//response.sendRedirect("/web-study/index.jsp");
+			}
 			
 			BookDAO_Mariadb dao = new BookDAO_Mariadb();
 			BookService service = new BookServiceImpl(dao);
