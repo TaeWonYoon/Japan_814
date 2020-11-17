@@ -11,7 +11,7 @@
 	       <li> <a href="chart1.jsp"> chart </a> </li>
 	       <li> <a href="#"> About </a> </li>
 	       <li> <a href="#"> Map </a> </li>
-	        <c:if test="${empty login}">
+	       <c:if test="${empty login}">
 			   <li> <a href="login.jsp"> LogIn </a></li><br>
 		   </c:if>
 			

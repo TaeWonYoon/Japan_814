@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>login App</title>
+<link rel="stylesheet" href="./css/my.css" >
+<link rel="stylesheet" href="./css/main.css" >
 </head>
 <body>
 <%@ include file="common/header.jsp" %>
@@ -28,7 +30,7 @@
 		</tr>
 	</table>
 </form>
-	
+
 <%@ include file="common/footer.jsp" %>
 </body>
 </html>

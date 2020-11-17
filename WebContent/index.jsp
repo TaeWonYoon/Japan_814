@@ -17,11 +17,17 @@
 <section>
 <h3> link list </h3>
 <ul>
-	<li><a href="${pageContext.request.contextPath}/login.jsp"> Login </a>
-	<li><a href="${pageContext.request.contextPath}/bookList.do"> Book List </a>
-	<li><a href="${pageContext.request.contextPath}/book.jsp"> Book 등록 </a>
-	<li><a href="${pageContext.request.contextPath}/"> 메뉴1 </a>
-	<li><a href="${pageContext.request.contextPath}/"> 메뉴2 </a>
+	<c:if test="${empty login}">
+			   <li> <a href="${pageContext.request.contextPath}/login.jsp"> LogIn </a></li><br>
+   	</c:if>
+	<c:if test="${!empty login }">
+	    <li> <a href="${pageContext.request.contextPath}/login.do"> LogOut </a></li>
+	    <li><a href="${pageContext.request.contextPath}/bookList.do"> Book List </a></li>
+		<li><a href="${pageContext.request.contextPath}/book.jsp"> Book 등록 </a></li>
+		<li><a href="${pageContext.request.contextPath}/"> 메뉴1 </a></li>
+		<li><a href="${pageContext.request.contextPath}/"> 메뉴2 </a></li>
+	</c:if>
+	
 </ul>
 </section>
 
