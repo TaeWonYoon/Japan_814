@@ -30,7 +30,7 @@
 			 <td> ${book.price}</td>
 		</tr>
 		<tr>
-		<td colspan="2"><img id="img" alt="...." src="./upload/dogs.jpg"> </td>
+		<td colspan="2"><img id="img" alt="...." src="./upload/love.png"> </td>
 		</tr>
 	</table>
 </form>

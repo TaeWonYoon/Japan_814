@@ -97,7 +97,7 @@ public class DispatcherServlet extends HttpServlet {
 					String fileName = data.getSubmittedFileName();
 					if(fileName != null && fileName.length() != 0) {
 						 data.write(path+fileName);
-						 img = fileName; 
+						 img = "./upload/"+fileName; 
 						//out.print("<img src='./upload/"+fileName+"'>");
 					}
 				}
