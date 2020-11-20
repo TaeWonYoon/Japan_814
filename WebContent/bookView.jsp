@@ -30,10 +30,11 @@
 			 <td> ${book.price}</td>
 		</tr>
 		<tr>
-		<td colspan="2"><img alt="...." src="./img/book1.png"> </td>
+		<td colspan="2"><img id="img" alt="...." src="./upload/dogs.jpg"> </td>
 		</tr>
 	</table>
 </form>
+
 	<table>
 		<tr>
 			<td>
@@ -48,10 +49,13 @@
 <%@ include file="common/footer.jsp" %>
 
 <script>
+	var img = document.getElementById('img');
+	console.log(img);
+
 	function modify(){
 		if(confirm("수정하시겠습니까?")) {
-			f.action="delete.do";
-			f.submit();
+			//f.action="";
+			//f.submit();
 		}
 	}
 	function bookDelete(){

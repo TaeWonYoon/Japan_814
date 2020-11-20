@@ -33,7 +33,7 @@
 		<tr>
 		<th>BookNo</th>
 		<th>Title</th>
-		<th>Publicher</th>
+		<th>Publisher</th>
 		<th>Price</th>
 		<th>date</th>
 		<th><input type="button" id="delete" value="삭제" onclick="delt()"/></th>

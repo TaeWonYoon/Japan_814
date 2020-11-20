@@ -6,14 +6,24 @@ public class BookVO {
 	private String publisher; // VARCHAR(40),
 	private int price; // int(8)
 	private String day;
+	private String img;
+
 	public BookVO() {	}
 
-	public BookVO(int bookno, String title, String publisher, int price,String day) {
+	public BookVO(int bookno, String title, String publisher, int price, String day, String img) {
 		this.bookno = bookno;
 		this.title = title;
 		this.publisher = publisher;
 		this.price = price;
 		this.day = day;
+		this.img = img;
+	}
+	public String getImg() {
+		return img;
+	}
+	
+	public void setImg(String img) {
+		this.img = img;
 	}
 
 	public String getDay() {
@@ -61,6 +71,4 @@ public class BookVO {
 		return "BookVO [bookno=" + bookno + ", title=" + title + ", publisher=" + publisher + ", price=" + price + "]";
 	}
 
-
-	
 }

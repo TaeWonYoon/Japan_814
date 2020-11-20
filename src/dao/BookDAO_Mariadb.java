@@ -44,7 +44,7 @@ public class BookDAO_Mariadb {
    public void bookAdd(BookVO vo) {
       
       String sql = 
-         "insert into Book (title,publisher,price) values ( ?, ?, ?);";
+         "insert into Book (title,publisher,price,img) values ( ?, ?, ?, ?);";
       
       int row = 0;
       
@@ -55,7 +55,7 @@ public class BookDAO_Mariadb {
     	  ps.setString(1, vo.getTitle());
           ps.setString(2, vo.getPublisher());
           ps.setInt(3,  vo.getPrice());
-          
+          ps.setString(4, vo.getImg());
           row = ps.executeUpdate();
           
           if(row == 0) {
@@ -169,6 +169,7 @@ public class BookDAO_Mariadb {
 	    		  vo.setPrice(rs.getInt("price"));
 	    		  vo.setPublisher(rs.getString("publisher"));
 	    		  vo.setTitle(rs.getNString("title"));
+	    		  vo.setImg(rs.getNString("img"));
 	    	  }
 	    	  
 //	    	  if(rs == null) {

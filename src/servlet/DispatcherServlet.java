@@ -1,14 +1,18 @@
 package servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Collection;
 import java.util.List;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
 import dao.BookDAO_Mariadb;
 import dao.UserDAO_Mariadb;
@@ -20,6 +24,7 @@ import vo.BookVO;
 import vo.UserVO;
 
 @WebServlet("*.do")
+@MultipartConfig(maxFileSize = 1024*1024*5)
 public class DispatcherServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -74,15 +79,34 @@ public class DispatcherServlet extends HttpServlet {
 			BookDAO_Mariadb dao = new BookDAO_Mariadb();
 			BookService service = new BookServiceImpl(dao);
 			
+			String path = request.getSession().getServletContext().getRealPath("/upload/");
+			System.out.println(path);
+			
 			String title = request.getParameter("title");
 			String publisher = request.getParameter("publisher");
 			int price = Integer.parseInt(request.getParameter("price"));
+			String img = null;
 			
 			BookVO vo = new BookVO();
+			
+			//파일업로드
+			Collection<Part> p = request.getParts();
+			
+			for(Part data : p) {
+				if(data.getContentType() != null) {
+					String fileName = data.getSubmittedFileName();
+					if(fileName != null && fileName.length() != 0) {
+						 data.write(path+fileName);
+						 img = fileName; 
+						//out.print("<img src='./upload/"+fileName+"'>");
+					}
+				}
+			}
+			
 			vo.setPrice(price);
 			vo.setTitle(title);
 			vo.setPublisher(publisher);
-			
+			vo.setImg(img);
 			service.bookAdd(vo);
 			
 			response.sendRedirect("bookList.do");
